@@ -1,4 +1,4 @@
-package kdniao
+package config
 
 const (
 	GATEWAY = "http://api.kdniao.com"
@@ -6,8 +6,8 @@ const (
 )
 
 const (
-	INSTANT_SEARCH_ENDPOINT = "/Ebusiness/EbusinessOrderHandle.aspx"
-	SUBSCRIBE_ENDPOINT      = "/api/dist"
+	SEARCH_ENDPOINT    = "/Ebusiness/EbusinessOrderHandle.aspx"
+	SUBSCRIBE_ENDPOINT = "/api/dist"
 )
 const (
 	DEFAULT_DATATYPE = "2" // JSON
@@ -49,18 +49,22 @@ const (
 )
 
 const (
-	StatusNone            = "0" // 无轨迹
-	StatusTook            = "1" // 已揽收
-	StatusInTransit       = "2" // 在途中
-	StatusSignedFor       = "3" // 签收
-	StatusProblemShipment = "4" // 问题件
+	StateNone            = "0" // 无轨迹
+	StateTook            = "1" // 已揽收
+	StateInTransit       = "2" // 在途中
+	StateSignedFor       = "3" // 签收
+	StateProblemShipment = "4" // 问题件
 )
 
 const (
 	InstantSearchRequestType = "1002"
 	SubscribeRequestType     = "1008"
+	SearchMonitorRequestType = "8001"
+	ExpressSearchRequestType = "8002"
 
+	// PushTracing 轨迹查询结果
 	PushTracing = "101"
+	// PushPayment 货款状态
 	PushPayment = "107"
 )
 
