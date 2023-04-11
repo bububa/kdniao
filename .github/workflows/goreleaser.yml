@@ -9,8 +9,7 @@ jobs:
   goreleaser:
     runs-on: ubuntu-latest
     env:
-      GOPATH: ${{ github.workspace }}
-      package: src/github.com/${{ github.repository }}
+      cache: ${{ github.workspace }}/go.sum
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -21,8 +20,7 @@ jobs:
         with:
           go-version: '1.20'
           cache: false
-          cache-dependency-path: |
-            ${{ env.GOPATH }}/${{ env.package }}/go.sum
+          cache-dependency-path: ${{ env.cache }}
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v4
         with:
